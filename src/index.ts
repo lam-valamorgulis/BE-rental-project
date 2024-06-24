@@ -1,16 +1,12 @@
-type User = {
-  name: string;
-  age: number;
-};
+import express from 'express';
 
-function isAdult(user: User): boolean {
-  return user.age >= 18;
-}
+const app = express();
+const port = 3000;
 
-const justine: User = {
-  name: "Justine",
-  age: 12,
-};
+app.get('/', (req, res) => {
+  res.send('Hello, World!');
+});
 
-const isJustineAnAdult: boolean = isAdult(justine);
-console.log(isJustineAnAdult);
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
+});
